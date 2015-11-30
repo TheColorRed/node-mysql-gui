@@ -1,0 +1,179 @@
+html, body{
+    background-color: #252526;
+    color: #cccccc;
+    -webkit-user-select: none;
+    cursor: default;
+    font-size: 13px;
+}
+
+.connections{
+    width: 250px;
+    height: 100vh;
+}
+
+.connections .remotes{
+    overflow: auto;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.connections .remotes .item{
+    padding: 3px 0;
+}
+.connections .root .database{
+    padding-left: calc(20 * 1px);
+}
+.connections .root .database-item{
+    padding-left: calc(20 * 2px);
+}
+.connections .root .database-table{
+    padding-left: calc(20 * 3px);
+}
+
+.connection-search{
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,0.5);
+    padding: 5px;
+    white-space: nowrap;
+}
+.connections .form-group{width: 49%;}
+.connections .form-group .form-control[type=text]{width: 100%;}
+.connections .filter-database, .connections .filter-table{position: relative;}
+.connections input[type=text].form-control{
+    padding-left: 28px;
+}
+.connections .filter-database:before, .connections .filter-table:before{
+    font-family: 'FontAwesome';
+    color: lightgray;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    z-index: 2;
+}
+.connections .filter-database:before{
+    content: "\f1c0";
+}
+.connections .filter-table:before{
+    content: "\f0ce";
+}
+.connections input[type=text]{
+    background-color: #3C3C3C;
+    color: #cccccc;
+    outline: none;
+    border: transparent;
+    padding: 5px;
+    height: auto;
+    font-size: 1rem;
+}
+.connections .form-control:focus{
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.results{
+    background: #2D2D2D;
+    /*height: 100vh;*/
+    position: absolute;
+    overflow-y: hidden;
+    overflow-x: auto;
+    padding-left: 0;
+    padding-right: 0;
+    left: 250px;
+    right: 0;
+    top: 0;
+    bottom: 15px;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd){
+    background: #383838;
+}
+
+.table-results>tbody>tr>td, .table-results>tbody>tr>th, .table-results>tfoot>tr>td, .table-results>tfoot>tr>th, .table-results>thead>tr>td, .table-results>thead>tr>th{
+    border: none;
+    border-right: solid 1px #484848;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.table-results>tbody>tr>td:last-child, .table-results>tbody>tr>th:last-child, .table-results>tfoot>tr>td:last-child, .table-results>tfoot>tr>th:last-child, .table-results>thead>tr>td:last-child, .table-results>thead>tr>th:last-child{
+    border-right: none;
+}
+
+#results-base{font-family: monospace;font-size: 1.2rem;}
+#results-base, #results-base div {position: absolute;}
+#results-base td, th {text-align: left; min-width: 250px;}
+#results-base th{
+    padding: 5px 10px;
+}
+
+#results-base{
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px black solid;
+}
+#results-data{
+    top: 30px; bottom: 0px; width: 100%; overflow: auto;
+}
+#results-header{
+    height: 30px; width: 100%; overflow: hidden;
+}
+#results-table-header{
+    position: absolute; top: 0px; left: 0px;
+}
+#results-table-data{
+    left: 0px; bottom: 0px;
+}
+
+
+.data-number{color: skyblue}
+.data-null{color: lightgray; font-style: italic;}
+.data-date{color: lightcoral}
+.data-string{color: lightgreen}
+
+.connections .database-table{
+    white-space: nowrap;
+}
+
+.connections .item:hover{
+    background: rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+.connections .item:hover.active{
+    background-color: #094771;
+}
+
+.connections .hide>div{
+    display: none;
+}
+
+.database-table.active{
+    background-color: #094771;
+}
+.database.item.active, .database.item.active:hover{
+    background: rgba(128, 128, 128, 0.2);
+    font-weight: bold;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    margin-right: 20px;
+    border: solid 1px rgba(255,255,255,0.2);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.1);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255,255,255,0.1);
+}
